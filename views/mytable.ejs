@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title><%= title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
@@ -13,7 +13,16 @@
         <h1><%= title %></h1>
     </header>
     <main>
-        <p><%- content %></p>
+        <table>
+            <% content.forEach(function(obj){ %>
+                <tr>
+                    <th><%= obj.id %></th>
+                    <td><%= obj.name %></td>
+                    <td><%= obj.mail %></td>
+                    <td><%= obj.age %></td>
+                </tr>
+            <% }); %>
+        </table>
     </main>
 </body>
 
