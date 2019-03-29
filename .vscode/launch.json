@@ -3,20 +3,32 @@
     // 既存の属性の説明をホバーして表示します。
     // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [
+    "configurations": [{
+            "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 9229
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}"
+        },
 
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/app.js"
+            "program": "${workspaceFolder}\\bin\\www"
         },
         {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}\\bin\\www"
         },
         {
             "type": "node",
