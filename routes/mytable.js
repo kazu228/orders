@@ -5,9 +5,9 @@ var mysql = require('mysql');
 
 //mysql of config
 var mysql_setting = {
-    host: 'localhost',
+    host: '192.168.0.220',
     user: 'root',
-    password: 'Robotics',
+    password: 'kikaku',
     database: 'my-nodeapp-db'
 };
 
@@ -25,7 +25,7 @@ router.get('/', (req, res, next) => {
                 title: 'mysql',
                 content: results
             };
-            res.render('hello', data);
+            res.render('mytable', data);
         }
     });
 
