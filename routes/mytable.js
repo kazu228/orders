@@ -53,8 +53,26 @@ router.post('/add', (req, res, next) => {
     };
     var connection = mysql.createConnection(mysql_setting);
     connection.connect();
-    connection.query('insert into mydata set ?', data, function (error, results, fields) {
+    connection.query('insert into mydata set ?', data, (error, results, fields) => {
         res.redirect('/mytable');
+    });
+    connection.end();
+});
+
+// get of add
+router.get('/show', (req, res, next) => {
+    var id = req.query.id;
+    var connection = mysql.createConnection(mysql_setting);
+    connection.connect();
+    connection.query('SELECT * from mydata where id =?', id, (error, results, fields) => {
+        if (error == null) {
+            var data = {
+                title: 'Hello/Show',
+                content: 'id = ' + id + 'のレコード：',
+                mydata: results[0]
+            };
+            res.render('mytable/show', data);
+        }
     });
     connection.end();
 });
