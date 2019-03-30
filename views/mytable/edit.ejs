@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/style.css">
+</head>
+
+<body>
+
+    <head>
+        <h1><%= title %></h1>
+    </head>
+    <main>
+        <p><%= content %></p>
+        <form method="post" action="/mytable/edit">
+            <input type="hidden" name="id" value="<%= mydata.id %>">
+            <table>
+                <thead>
+                    <th>labels</th><th>contents</th>
+                </thead>
+                <tbody>
+                    <tr><th>name</th><td><input type="text" name="name" value="<%= mydata.name %>"></td></tr>
+                    <tr><th>mail</th><td><input type="text" name="mail" value="<%= mydata.mail %>"></td></tr>
+                    <tr><th>age</th><td><input type="number" name="age" value="<%= mydata.age %>"></td></tr>
+                    <tr><th>name</th><td><input type="submit" value="更新"></td></tr>
+                </tbody>
+            </table>
+        </form>
+    </main>
+</body>
+
+</html>
