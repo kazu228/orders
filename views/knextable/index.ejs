@@ -24,7 +24,7 @@
             </thead>
             <tbody>
             <% for (var i in content) { %>
-            <% var test = content[i] %>
+            <% var test = content[i].attributes; %>
                 <tr>
                     <th><%= test.id %></th>
                     <td><%= test.name %></td>

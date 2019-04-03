@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <header>
+        <h1><%= title %></h1>
+    </header>
+    <main>
+        <p><%- content %></p>
+        <% if (mydata != null){ %>
+            <p>
+                <ul>
+                    <li><%- mydata.id %></li>
+                    <li><%- mydata.attributes.name %></li>
+                    <li><%- mydata.attributes.mail %></li>
+                    <li><%- mydata.attributes.age + ' old.' %></li>
+                </ul>
+            </p>
+        <% } %>
+        <form method="post" action="/knextable/find">
+            <table>
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th>ID</th><td><input type="text" name="fstr" value="<%= form.fstr %>"></td></tr>
+                    <tr><th></th><td><input type="submit" value="検索" ></td></tr>
+                </tbody>
+            </table>
+        </form>
+    </main>
+</body>
+
+</html>
