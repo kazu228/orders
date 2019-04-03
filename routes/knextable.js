@@ -172,7 +172,6 @@ router.post('/find', (req, res, next) => {
     });
 });
 
-module.exports = router;
 
 Bookshelf.plugin('pagination');
 
@@ -189,9 +188,9 @@ router.get('/:page', (req, res, next) => {
         var data = {
             title: 'Jellop1!',
             content: collection.toArray(),
-            pagenation: collection.pagenation
+            pagination: collection.pagination
         };
-        // console.log(collection.pagenation);
+        // console.log(collection.pagination);
         res.render('knextable/index', data);
     }).catch((err) => {
         res.status(500).json({
@@ -202,3 +201,5 @@ router.get('/:page', (req, res, next) => {
         });
     });
 });
+
+module.exports = router;
