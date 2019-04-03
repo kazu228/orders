@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <header>
+        <h1><%= title %></h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>mail</th>
+                    <th>age</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for (var i in content) { %>
+            <% var test = content[i] %>
+                <tr>
+                    <th><%= test.id %></th>
+                    <td><%= test.name %></td>
+                    <td><%= test.mail %></td>
+                    <td><%= test.age %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>
