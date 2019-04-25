@@ -37,13 +37,13 @@
                     <td><%= test.mail %></td>
                     <td><%= test.age %></td>
                     <td><a href="/knextable/show/?id=<%= test.id %>">Show</a></td>
-                    <td><a href="/knextable/show/?edit=<%= test.id %>">Edit</a></td>
+                    <td><a href="/knextable/edit/?id=<%= test.id %>">Edit</a></td>
+                    <td><a href="/knextable/delete/?id=<%= test.id %>">Delete</a></td>
                 </tr>
                 <% } %>
             </tbody>
         </table>
         <a href="/knextable/add">Add</a>
-        <a href="/knextable/delete">Delete</a>
     </main>
 </body>
 
